@@ -36,7 +36,7 @@ export const projects = [
     description: "A ResNet-based image classifier trained on satellite views to classify vegetation types from map data. Useful for crop planning and environmental monitoring.",
     tech: ["Python", "PyTorch", "Google Maps API", "ResNet"],
     links: {
-      website: "",
+      website: "https://sentinel-landcover-classification-123.streamlit.app/",
       github: "https://github.com/mvskarthik123/vegetation-type-classification",
       video: ""
     },
