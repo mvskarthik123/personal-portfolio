@@ -99,19 +99,27 @@ export function HeroSection() {
           Computer Science student specializing in Data Science with a focus on full-stack development and AI/ML. I enjoy building practical, user-focused applications and continuously exploring new technologies to grow as a developer.          </p>
 
           {/* buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 mt-16 justify-center animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            <a href="mailto:petakarthikram@gmail.com">
-              <Button size="lg" className="relative group px-8 overflow-hidden">
-                {/* Glowing gradient effect */}
-                <span className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-white to-purple-500 rounded-xl blur-lg opacity-60 group-hover:opacity-90 transition duration-1000 group-hover:duration-300 animate-pulse pointer-events-none"></span>
+        <Button
+  size="lg"
+  className="relative group px-8 overflow-hidden"
+  onClick={() => {
+    if (window.innerWidth < 768) {
+      // Mobile
+      window.location.href = "mailto:mvskarthikeya101@gmail.com";
+    } else {
+      // Desktop
+      scrollToSection("contact");
+    }
+  }}
+>
+  <span className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-white to-purple-500 rounded-xl blur-lg opacity-60 group-hover:opacity-90 transition duration-1000 group-hover:duration-300 animate-pulse pointer-events-none"></span>
+  <span className="relative flex items-center text-black group-hover:text-white transition-colors">
+    Get in Touch
+    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+  </span>
+</Button>
 
-                {/* Visible content */}
-                <span className="relative flex items-center text-black group-hover:text-white transition-colors">
-                  Get in Touch
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Button>
-            </a>
+            
             <Button
               size="lg"
               variant="outline"
@@ -120,7 +128,7 @@ export function HeroSection() {
             >
               View Projects
             </Button>
-          </div>
+          
         </div>
       </div>
     </section>
